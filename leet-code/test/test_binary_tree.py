@@ -23,7 +23,11 @@ from algorithm.binary_tree import (
     maxPathSum,
     sumNumbers,
     countNodes,
-    lowestCommonAncestor
+    lowestCommonAncestor,
+    rightSideView,
+    averageOfLevels,
+    levelOrder,
+    zigzagLevelOrder
 )
 
 
@@ -138,6 +142,55 @@ class TestBinaryTree(unittest.TestCase):
         self.assertEqual(maxPathSum(buildBinaryTree([1, 2, 3])), 6)
         self.assertEqual(maxPathSum(buildBinaryTree(
             [-10, 9, 20, None, None, 15, 7])), 42)
+
+    def _testRightSideView(self, values: list[int | None],
+                           expect: list[int | None]):
+        root = buildBinaryTree(values)
+        result = rightSideView(root)
+        self.assertEqual(result, expect)
+
+    def testRightSideView(self):
+        self._testRightSideView([1, 2, 3, None, 5, None, 4], [1, 3, 4])
+        self._testRightSideView([1, 2, 3, 4, None, None, None, 5],
+                                [1, 3, 4, 5])
+        self._testRightSideView([1, None, 3], [1, 3])
+        self._testRightSideView([], [])
+
+    def _testAverageOfLevels(self, values: list[int | None],
+                             expect: list[float]):
+        root = buildBinaryTree(values)
+        result = averageOfLevels(root)
+        self.assertEqual(result, expect)
+
+    def testAverageOfLevels(self):
+        self._testAverageOfLevels([3, 9, 20, None, None, 15, 7],
+                                  [3.00000, 14.50000, 11.00000])
+        self._testAverageOfLevels([3, 9, 20, 15, 7],
+                                  [3.00000, 14.50000, 11.00000])
+
+    def _testLevelOrder(self, values: list[int | None],
+                        expect: list[list[int]]):
+        root = buildBinaryTree(values)
+        result = levelOrder(root)
+        self.assertEqual(result, expect)
+
+    def testLevelOrder(self):
+        self._testLevelOrder([3, 9, 20, None, None, 15, 7],
+                             [[3], [9, 20], [15, 7]])
+        self._testLevelOrder([1], [[1]])
+        self._testLevelOrder([], [])
+
+    def _testZigzagLevelOrder(self, values: list[int | None],
+                              expect: list[list[int]]):
+        root = buildBinaryTree(values)
+        result = zigzagLevelOrder(root)
+        self.assertEqual(result, expect)
+
+    def testZigzagLevelOrder(self):
+        self._testZigzagLevelOrder([3, 9, 20, None, None, 15, 7],
+                                   [[3], [20, 9], [15, 7]])
+        self._testZigzagLevelOrder([1], [[1]])
+        self._testZigzagLevelOrder([], [])
 
 
 if __name__ == '__main__':
