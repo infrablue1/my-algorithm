@@ -27,7 +27,10 @@ from algorithm.binary_tree import (
     rightSideView,
     averageOfLevels,
     levelOrder,
-    zigzagLevelOrder
+    zigzagLevelOrder,
+    getMinimumDifference,
+    kthSmallest,
+    isValidBST,
 )
 
 
@@ -191,6 +194,23 @@ class TestBinaryTree(unittest.TestCase):
                                    [[3], [20, 9], [15, 7]])
         self._testZigzagLevelOrder([1], [[1]])
         self._testZigzagLevelOrder([], [])
+
+    def testGetMinimumDifference(self):
+        self.assertEqual(getMinimumDifference(buildBinaryTree(
+            [4, 2, 6, 1, 3])), 1)
+        self.assertEqual(getMinimumDifference(buildBinaryTree(
+            [1, 0, 48, None, None, 12, 49])), 1)
+
+    def testKthSmallest(self):
+        self.assertEqual(kthSmallest(buildBinaryTree(
+            [3, 1, 4, None, 2]), 1), 1)
+        self.assertEqual(kthSmallest(buildBinaryTree(
+            [5, 3, 6, 2, 4, None, None, 1]), 3), 3)
+
+    def testIsValidBST(self):
+        self.assertEqual(isValidBST(buildBinaryTree([2, 1, 3])), True)
+        self.assertEqual(isValidBST(buildBinaryTree(
+            [5, 1, 4, None, None, 3, 6])), False)
 
 
 if __name__ == '__main__':
