@@ -28,7 +28,10 @@ from algorithm.arrays import (
     strStr,
     zigzagConvert,
     candy,
-    trap)
+    trap,
+    maxSubArray,
+    maxSubarraySumCircular,
+)
 
 
 class TestArrays(unittest.TestCase):
@@ -139,6 +142,16 @@ class TestArrays(unittest.TestCase):
     def testTrap(self):
         self.assertEqual(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]), 6)
         self.assertEqual(trap([4, 2, 0, 3, 2, 5]), 9)
+
+    def testMaxSubArray(self):
+        self.assertEqual(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]), 6)
+        self.assertEqual(maxSubArray([1]), 1)
+        self.assertEqual(maxSubArray([5, 4, -1, 7, 8]), 23)
+
+    def testMaxSubarraySumCircular(self):
+        self.assertEqual(maxSubarraySumCircular([1, -2, 3, -2]), 3)
+        self.assertEqual(maxSubarraySumCircular([5, -3, 5]), 10)
+        self.assertEqual(maxSubarraySumCircular([-3, -2, -3]), -2)
 
 
 if __name__ == '__main__':

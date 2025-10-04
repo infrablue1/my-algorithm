@@ -14,10 +14,8 @@ Note that the starting point is assumed to be valid, so it might not be
 included in the bank.
 
 example:
-Input: numCourses = 2, prerequisites = [[1,0]]
-Output: true
-Explanation: There are a total of 2 courses to take.
-To take course 1 you should have finished course 0. So it is possible.
+Input: startGene = "AACCGGTT", endGene = "AACCGGTA", bank = ["AACCGGTA"]
+Output: 1
 """
 
 from collections import deque

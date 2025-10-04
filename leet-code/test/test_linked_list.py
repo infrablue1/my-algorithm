@@ -22,7 +22,9 @@ from algorithm.linked_list import (
     rotateRight,
     partition,
     LRUCache,
-    reverseKGroup
+    reverseKGroup,
+    sortList,
+    mergeKLists,
 )
 
 
@@ -152,6 +154,29 @@ class TestLinkedList(unittest.TestCase):
     def testReverseKGroup(self):
         self._testReverseKGroup([1, 2, 3, 4, 5], 2, [2, 1, 4, 3, 5])
         self._testReverseKGroup([1, 2, 3, 4, 5], 3, [3, 2, 1, 4, 5])
+
+    def _testSortList(self, input: list[int], expect: list[int]):
+        head = buildLinkedList(input)
+        result = sortList(head)
+        self.assertEqual(linkedList2List(result), expect)
+
+    def testSortList(self):
+        self._testSortList([4, 2, 1, 3], [1, 2, 3, 4])
+        self._testSortList([-1, 5, 3, 4, 0], [-1, 0, 3, 4, 5])
+        self._testSortList([], [])
+
+    def _testMergeKLists(self, input: list[list[int]], expect: list[int]):
+        lists = []
+        for values in input:
+            lists.append(buildLinkedList(values))
+        result = mergeKLists(lists)
+        self.assertEqual(linkedList2List(result), expect)
+
+    def testMergeKLists(self):
+        self._testMergeKLists([[1, 4, 5], [1, 3, 4], [2, 6]],
+                              [1, 1, 2, 3, 4, 4, 5, 6])
+        self._testMergeKLists([], [])
+        self._testMergeKLists([[]], [])
 
 
 if __name__ == '__main__':

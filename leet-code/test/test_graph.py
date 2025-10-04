@@ -13,6 +13,7 @@ from algorithm.graph import (
     canFinish,
     findOrder,
     minMutation,
+    ladderLength,
 )
 
 
@@ -84,6 +85,12 @@ class TestGraph(unittest.TestCase):
         self.assertEqual(minMutation("AACCGGTT", "AACCGGTA", ["AACCGGTA"]), 1)
         self.assertEqual(minMutation("AACCGGTT", "AAACGGTA",
                                      ["AACCGGTA", "AACCGCTA", "AAACGGTA"]), 2)
+
+    def testLadderLength(self):
+        self.assertEqual(ladderLength("hit", "cog", ["hot", "dot", "dog",
+                                                     "lot", "log", "cog"]), 5)
+        self.assertEqual(ladderLength("hit", "cog", ["hot", "dot", "dog",
+                                                     "lot", "log"]), 0)
 
 
 if __name__ == '__main__':
