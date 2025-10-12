@@ -17,6 +17,10 @@ from algorithm.dynamic_programming import (
     uniquePathsWithObstacles,
     longestPalindrome,
     isInterleave,
+    minDistance,
+    maximalSquare,
+    maxProfit3,
+    maxProfit4,
 )
 
 
@@ -68,6 +72,27 @@ class DPTest(unittest.TestCase):
         self.assertEqual(isInterleave("aabcc", "dbbca", "aadbbcbcac"), True)
         self.assertEqual(isInterleave("aabcc", "dbbca", "aadbbbaccc"), False)
         self.assertEqual(isInterleave("", "", ""), True)
+
+    def testMinDistance(self):
+        self.assertEqual(minDistance("horse", "ros"), 3)
+        self.assertEqual(minDistance("intention", "execution"), 5)
+
+    def testMaximalSquare(self):
+        self.assertEqual(maximalSquare([["1", "0", "1", "0", "0"],
+                                        ["1", "0", "1", "1", "1"],
+                                        ["1", "1", "1", "1", "1"],
+                                        ["1", "0", "0", "1", "0"]]), 4)
+        self.assertEqual(maximalSquare([["0", "1"], ["1", "0"]]), 1)
+        self.assertEqual(maximalSquare([["0"]]), 0)
+
+    def testMaxProfit3(self):
+        self.assertEqual(maxProfit3([3, 3, 5, 0, 0, 3, 1, 4]), 6)
+        self.assertEqual(maxProfit3([1, 2, 3, 4, 5]), 4)
+        self.assertEqual(maxProfit3([7, 6, 4, 3, 1]), 0)
+
+    def testMaxProfit4(self):
+        self.assertEqual(maxProfit4(2, [2, 4, 1]), 2)
+        self.assertEqual(maxProfit4(2, [3, 2, 6, 5, 0, 3]), 7)
 
 
 if __name__ == '__main__':

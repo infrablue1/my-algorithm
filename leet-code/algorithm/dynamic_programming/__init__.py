@@ -8,4 +8,6 @@ from .min_path_sum import *
 from .unique_path import *
 from .longest_palindrome import *
 from .interleave_string import *
-
+from .edit_distance import *
+from .max_square import *
+from .buy_sell_stock import *
