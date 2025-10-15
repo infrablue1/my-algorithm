@@ -18,4 +18,5 @@ from .trapping_rain_water import *
 from .max_subarray import *
 from .max_sum_circular_array import *
 from .text_justify import *
+from .max_submatrix import *
 
