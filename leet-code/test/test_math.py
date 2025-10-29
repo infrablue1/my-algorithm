@@ -12,6 +12,7 @@ from algorithm.math import (
     trailingZeroes,
     mySqrt,
     myPow,
+    divingBoard,
 )
 
 
@@ -40,6 +41,11 @@ class MathTest(unittest.TestCase):
         self.assertEqual(myPow(2.0, 10), 1024.0)
         self.assertEqual(round(myPow(2.1, 3), 2), 9.26)
         self.assertEqual(myPow(2.0, -2), 0.25)
+
+    def testDivingBoard(self):
+        self.assertEqual(divingBoard(1, 2, 3), [3, 4, 5, 6])
+        self.assertEqual(divingBoard(1, 1, 10000), [10000])
+        self.assertEqual(divingBoard(1, 2, 0), [])
 
 
 if __name__ == '__main__':

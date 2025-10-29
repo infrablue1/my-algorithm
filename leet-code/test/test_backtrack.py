@@ -13,6 +13,8 @@ from algorithm.backtrack import (
     combinationSum,
     generateParenthesis,
     exist,
+    solveNQueens,
+    uniquePermutation,
 )
 
 
@@ -58,6 +60,16 @@ class TestBacktrack(unittest.TestCase):
         self.assertEqual(exist([["A", "B", "C", "E"],
                                 ["S", "F", "C", "S"],
                                 ["A", "D", "E", "E"]], "ABCB"), False)
+
+    def testsolveNQueens(self):
+        fourQueensBoard = [[".Q..", "...Q", "Q...", "..Q."],
+                           ["..Q.",  "Q...", "...Q", ".Q.."]]
+        self.assertEqual(solveNQueens(4), fourQueensBoard)
+
+    def testUniquePermutation(self):
+        self.assertEqual(uniquePermutation("qwe"),
+                         ['eqw', 'ewq', 'qew', 'qwe', 'weq', 'wqe'])
+        self.assertEqual(uniquePermutation("ab"), ["ab", "ba"])
 
 
 if __name__ == '__main__':
