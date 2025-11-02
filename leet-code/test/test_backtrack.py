@@ -15,6 +15,7 @@ from algorithm.backtrack import (
     exist,
     solveNQueens,
     uniquePermutation,
+    pathWithObstacles,
 )
 
 
@@ -70,6 +71,10 @@ class TestBacktrack(unittest.TestCase):
         self.assertEqual(uniquePermutation("qwe"),
                          ['eqw', 'ewq', 'qew', 'qwe', 'weq', 'wqe'])
         self.assertEqual(uniquePermutation("ab"), ["ab", "ba"])
+
+    def testPathWithObstacles(self):
+        self.assertEqual(pathWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]]),
+                         [[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]])
 
 
 if __name__ == '__main__':

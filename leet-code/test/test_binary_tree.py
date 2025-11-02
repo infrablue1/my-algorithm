@@ -21,6 +21,7 @@ from algorithm.binary_tree import (
     flatten,
     hasPathSum,
     maxPathSum,
+    pathSum,
     sumNumbers,
     countNodes,
     lowestCommonAncestor,
@@ -211,6 +212,10 @@ class TestBinaryTree(unittest.TestCase):
         self.assertEqual(isValidBST(buildBinaryTree([2, 1, 3])), True)
         self.assertEqual(isValidBST(buildBinaryTree(
             [5, 1, 4, None, None, 3, 6])), False)
+
+    def testPathSum(self):
+        self.assertEqual(pathSum(buildBinaryTree(
+            [5, 4, 8, 11, None, 13, 4, 7, 2, 5, 1]), 22), 3)
 
 
 if __name__ == '__main__':

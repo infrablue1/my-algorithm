@@ -33,6 +33,7 @@ from algorithm.arrays import (
     maxSubarraySumCircular,
     fullJustify,
     getMaxMatrix,
+    subSort,
 )
 
 
@@ -190,6 +191,10 @@ class TestArrays(unittest.TestCase):
         self.assertEqual(getMaxMatrix([[9, -8, 1, 3, -2], [-3, 7, 6, -2, 4],
                                        [6, -4, -4, 8, -7]]),
                          [0, 0, 2, 3])
+
+    def testSubSort(self):
+        self.assertEqual(subSort(
+            [1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19]), [3, 9])
 
 
 if __name__ == '__main__':
