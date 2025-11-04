@@ -21,6 +21,7 @@ from algorithm.dynamic_programming import (
     maximalSquare,
     maxProfit3,
     maxProfit4,
+    respace,
 )
 
 
@@ -93,6 +94,10 @@ class DPTest(unittest.TestCase):
     def testMaxProfit4(self):
         self.assertEqual(maxProfit4(2, [2, 4, 1]), 2)
         self.assertEqual(maxProfit4(2, [3, 2, 6, 5, 0, 3]), 7)
+
+    def testRespace(self):
+        self.assertEqual(respace(["looked", "just", "like", "her", "brother"],
+                                 "jesslookedjustliketimherbrother"), 7)
 
 
 if __name__ == '__main__':

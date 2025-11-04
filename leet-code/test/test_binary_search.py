@@ -9,6 +9,7 @@ sys.path.append(parent_path)
 from algorithm.binary_search import (
     searchInsert,
     searchMatrix,
+    searchMatrix2,
     findPeakElement,
     searchRotatedArray,
     searchRange,
@@ -28,6 +29,18 @@ class BinarySearchTest(unittest.TestCase):
                                        [23, 30, 34, 60]], 3), True)
         self.assertEqual(searchMatrix([[1, 3, 5, 7], [10, 11, 16, 20],
                                        [23, 30, 34, 60]], 13), False)
+
+    def testSearchMatrix2(self):
+        self.assertEqual(searchMatrix2([[1, 4, 7, 11, 15],
+                                        [2, 5, 8, 12, 19],
+                                        [3, 6, 9, 16, 22],
+                                        [10, 13, 14, 17, 24],
+                                        [18, 21, 23, 26, 30]], 5), True)
+        self.assertEqual(searchMatrix2([[1, 4, 7, 11, 15],
+                                        [2, 5, 8, 12, 19],
+                                        [3, 6, 9, 16, 22],
+                                        [10, 13, 14, 17, 24],
+                                        [18, 21, 23, 26, 30]], 20), False)
 
     def testFindPeakElement(self):
         self.assertEqual(findPeakElement([1, 2, 3, 1]), 2)

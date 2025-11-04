@@ -32,6 +32,7 @@ from algorithm.binary_tree import (
     getMinimumDifference,
     kthSmallest,
     isValidBST,
+    convertBiNode,
 )
 
 
@@ -216,6 +217,17 @@ class TestBinaryTree(unittest.TestCase):
     def testPathSum(self):
         self.assertEqual(pathSum(buildBinaryTree(
             [5, 4, 8, 11, None, 13, 4, 7, 2, 5, 1]), 22), 3)
+
+    def _testConvertBiNode(self, values: list[int | None],
+                           expect: list[int | None]):
+        root = buildBinaryTree(values)
+        result = binaryTree2List(convertBiNode(root))
+        self.assertEqual(result, expect)
+
+    def testConvertBiNode(self):
+        self._testConvertBiNode([4, 2, 5, 1, 3, None, 6, 0],
+                                [0, None, 1, None, 2, None, 3,
+                                 None, 4, None, 5, None, 6])
 
 
 if __name__ == '__main__':

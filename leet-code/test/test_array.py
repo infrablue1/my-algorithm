@@ -34,6 +34,7 @@ from algorithm.arrays import (
     fullJustify,
     getMaxMatrix,
     subSort,
+    wiggleSort,
 )
 
 
@@ -195,6 +196,9 @@ class TestArrays(unittest.TestCase):
     def testSubSort(self):
         self.assertEqual(subSort(
             [1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19]), [3, 9])
+
+    def testWiggleSort(self):
+        self.assertEqual(wiggleSort([5, 3, 1, 2, 3]), [5, 1, 3, 2, 3])
 
 
 if __name__ == '__main__':
