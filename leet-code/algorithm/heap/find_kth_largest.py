@@ -15,18 +15,32 @@ import random
 
 def findKthLargest(nums: list[int], k: int) -> int:
 
-    def quickSelect(nums: list[int], k: int) -> int:
-        pivot = random.choice(nums)
-        left = [x for x in nums if x < pivot]
-        mid = [x for x in nums if x == pivot]
-        right = [x for x in nums if x > pivot]
-        L, M = len(left), len(mid)
-        if k <= L:
-            return quickSelect(left, k)
-        elif k > L + M:
-            return quickSelect(right, k - L - M)
-        return mid[0]
+    def partition(left, right) -> int:
+        randomIndex = random.randint(left, right)
+        nums[randomIndex], nums[left] = nums[left], nums[randomIndex]
+        pivot = nums[left]
+        while left < right:
+            while left < right and nums[right] >= pivot:
+                right -= 1
+            nums[left] = nums[right]
+            while left < right and nums[left] <= pivot:
+                left += 1
+            nums[right] = nums[left]
+        nums[left] = pivot
+        return left
 
-    # K is the kth smallest.
+    def quickSelect(left: int, right: int, k: int) -> int:
+        if left >= right:
+            return
+        pos = partition(left, right)
+        index = pos - left + 1
+        if k == index:
+            return
+        elif k < index:
+            quickSelect(left, pos - 1, k)
+        else:
+            quickSelect(pos + 1, right, k - index)
+
     K = len(nums) - k + 1
-    return quickSelect(nums, K)
+    quickSelect(0, len(nums) - 1, K)
+    return nums[K - 1]

@@ -9,7 +9,7 @@ Output: 23
 """
 
 
-def calculate(s: str) -> int:
+def calculate2(s: str) -> int:
     n = len(s)
     stk = []
     i = 0
@@ -32,7 +32,7 @@ def calculate(s: str) -> int:
             stk.append(sign)
             result, sign = 0, 1
         elif s[i] == ')':
-            # The stack top is the sign value of current () 
+            # The stack top is the sign value of current ()
             result = result * stk.pop() + stk.pop()
 
         i += 1

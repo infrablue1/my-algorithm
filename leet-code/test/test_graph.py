@@ -14,6 +14,8 @@ from algorithm.graph import (
     findOrder,
     minMutation,
     ladderLength,
+    findLadders,
+    findLadders2,
 )
 
 
@@ -91,6 +93,29 @@ class TestGraph(unittest.TestCase):
                                                      "lot", "log", "cog"]), 5)
         self.assertEqual(ladderLength("hit", "cog", ["hot", "dot", "dog",
                                                      "lot", "log"]), 0)
+
+    def testFindLadders(self):
+        self.assertEqual(findLadders("hit", "cog",
+                                     ["hot", "dot", "dog", "lot", "log",
+                                      "cog"]),
+                         ['hit', 'hot', 'dot', 'dog', 'cog'])
+        self.assertEqual(findLadders("hit", "cog",
+                                     ["hot", "dot", "dog", "lot", "log"]), [])
+
+    def testFindLadders2(self):
+        self.assertEqual(findLadders2("hit", "cog",
+                                      ["hot", "dot", "dog", "lot", "log",
+                                       "cog"]),
+                         [["hit", "hot", "dot", "dog", "cog"],
+                          ["hit", "hot", "lot", "log", "cog"]])
+        self.assertEqual(findLadders2("hit", "cog",
+                                      ["hot", "dot", "dog", "lot", "log"]), [])
+        self.assertEqual(findLadders2("red", "tax",
+                                      ["ted", "tex", "red", "tax", "tad",
+                                       "den", "rex", "pee"]),
+                         [['red', 'rex', 'tex', 'tax'],
+                          ['red', 'ted', 'tad', 'tax'],
+                          ['red', 'ted', 'tex', 'tax']])
 
 
 if __name__ == '__main__':

@@ -11,7 +11,8 @@ from algorithm.stack import (
     simplifyPath,
     MinStack,
     evalRPN,
-    calculate
+    calculate,
+    calculate2,
 )
 
 
@@ -67,9 +68,14 @@ class TestStack(unittest.TestCase):
                                   "*", "17", "+", "5", "+"]), 22)
 
     def testCalculate(self):
-        self.assertEqual(calculate("1 + 1"), 2)
-        self.assertEqual(calculate(" 2-1 + 2 "), 3)
-        self.assertEqual(calculate("(1+(4+5+2)-3)+(6+8)"), 23)
+        self.assertEqual(calculate("3+2*2"), 7)
+        self.assertEqual(calculate("3/2 "), 1)
+        self.assertEqual(calculate(" 3+5 / 2 "), 5)
+
+    def testCalculate2(self):
+        self.assertEqual(calculate2("1 + 1"), 2)
+        self.assertEqual(calculate2(" 2-1 + 2 "), 3)
+        self.assertEqual(calculate2("(1+(4+5+2)-3)+(6+8)"), 23)
 
 
 if __name__ == '__main__':
