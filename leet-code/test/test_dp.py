@@ -22,6 +22,7 @@ from algorithm.dynamic_programming import (
     maxProfit3,
     maxProfit4,
     respace,
+    countEval,
 )
 
 
@@ -98,6 +99,10 @@ class DPTest(unittest.TestCase):
     def testRespace(self):
         self.assertEqual(respace(["looked", "just", "like", "her", "brother"],
                                  "jesslookedjustliketimherbrother"), 7)
+
+    def testCountEval(self):
+        self.assertEqual(countEval("1^0|0|1", 0), 2)
+        self.assertEqual(countEval("0&0&0&1^1|0", 1), 10)
 
 
 if __name__ == '__main__':

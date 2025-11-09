@@ -35,6 +35,7 @@ from algorithm.arrays import (
     getMaxMatrix,
     subSort,
     wiggleSort,
+    findLongestSubarray,
 )
 
 
@@ -199,6 +200,15 @@ class TestArrays(unittest.TestCase):
 
     def testWiggleSort(self):
         self.assertEqual(wiggleSort([5, 3, 1, 2, 3]), [5, 1, 3, 2, 3])
+
+    def testFindLongestSubarray(self):
+        self.assertEqual(findLongestSubarray(["A", "1", "B", "C", "D", "2",
+                                              "3", "4", "E", "5", "F", "G",
+                                              "6", "7", "H", "I", "J", "K",
+                                              "L", "M"]),
+                         ["A", "1", "B", "C", "D", "2", "3", "4", "E", "5",
+                          "F", "G", "6", "7"])
+        self.assertEqual(findLongestSubarray(["A", "A"]), [])
 
 
 if __name__ == '__main__':

@@ -12,3 +12,4 @@ from .edit_distance import *
 from .max_square import *
 from .buy_sell_stock import *
 from .re_space import *
+from .bool_eval import *
