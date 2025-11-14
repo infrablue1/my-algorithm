@@ -22,3 +22,21 @@ def lengthOfLIS(nums: list[int]) -> int:
                 dp[i] = max(dp[i], dp[j] + 1)
             ans = max(ans, dp[i])
     return ans
+
+# Binary search solution
+def lengthOfLIS2(nums: list[int]) -> int:
+    n = len(nums)
+    tails =[0] * n
+    size = 0
+    for num in nums:
+        i, j = 0, size
+        while i < j:
+            mid = (i + j) // 2
+            if tails[mid] < num:
+                i = mid + 1
+            else:
+                j = mid
+        tails[i] = num
+        size = max(i + 1, size)
+
+    return size

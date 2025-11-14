@@ -23,6 +23,7 @@ from algorithm.dynamic_programming import (
     maxProfit4,
     respace,
     countEval,
+    getKthMagicNumber,
 )
 
 
@@ -103,6 +104,9 @@ class DPTest(unittest.TestCase):
     def testCountEval(self):
         self.assertEqual(countEval("1^0|0|1", 0), 2)
         self.assertEqual(countEval("0&0&0&1^1|0", 1), 10)
+
+    def testGetKthMagicNumber(self):
+        self.assertEqual(getKthMagicNumber(5), 9)
 
 
 if __name__ == '__main__':

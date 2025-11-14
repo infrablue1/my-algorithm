@@ -14,6 +14,7 @@ from algorithm.binary_search import (
     searchRotatedArray,
     searchRange,
     findRotatedMin,
+    bestSeqAtIndex,
 )
 
 
@@ -60,6 +61,10 @@ class BinarySearchTest(unittest.TestCase):
         self.assertEqual(findRotatedMin([3, 4, 5, 1, 2]), 1)
         self.assertEqual(findRotatedMin([4, 5, 6, 7, 0, 1, 2]), 0)
         self.assertEqual(findRotatedMin([11, 13, 15, 17]), 11)
+
+    def testBestSeqAtIndex(self):
+        self.assertEqual(bestSeqAtIndex([65, 70, 56, 75, 60, 68],
+                                        [100, 150, 90, 190, 95, 110]), 6)
 
 
 if __name__ == '__main__':

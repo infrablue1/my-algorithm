@@ -36,6 +36,7 @@ from algorithm.arrays import (
     subSort,
     wiggleSort,
     findLongestSubarray,
+    findClosest,
 )
 
 
@@ -209,6 +210,11 @@ class TestArrays(unittest.TestCase):
                          ["A", "1", "B", "C", "D", "2", "3", "4", "E", "5",
                           "F", "G", "6", "7"])
         self.assertEqual(findLongestSubarray(["A", "A"]), [])
+
+    def testFindClosest(self):
+        self.assertEqual(findClosest(["I", "am", "a", "student", "from", "a",
+                                      "university", "in", "a", "city"],
+                                     "a", "student"), 1)
 
 
 if __name__ == '__main__':
