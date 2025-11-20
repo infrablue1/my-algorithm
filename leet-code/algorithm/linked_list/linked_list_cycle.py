@@ -26,3 +26,18 @@ def hasCycle(head: ListNode | None) -> bool:
             return True
 
     return False
+
+
+def getCycleEntrance(head: ListNode | None) -> ListNode | None:
+    slow, fast = head, head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            node = head
+            while node != slow:
+                slow = slow.next
+                node = node.next
+            return node
+
+    return None

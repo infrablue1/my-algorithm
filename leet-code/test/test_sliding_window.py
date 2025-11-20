@@ -11,6 +11,7 @@ from algorithm.sliding_window import (
     lengthOfLongestSubstring,
     findSubstring,
     minWindow,
+    shortestSeq,
 )
 
 
@@ -38,6 +39,11 @@ class TestSlidingWindow(unittest.TestCase):
         self.assertEqual(minWindow("ADOBECODEBANC", "ABC"), "BANC")
         self.assertEqual(minWindow("a", "a"), "a")
         self.assertEqual(minWindow("a", "aa"), "")
+
+    def testShortestSeq(self):
+        self.assertEqual(shortestSeq([7, 5, 9, 0, 2, 1, 3, 5, 7, 9, 1, 1, 5, 8,
+                                      8, 9, 7], [1, 5, 9]), [7, 10])
+        self.assertEqual(shortestSeq([1, 2, 3], [4]), [])
 
 
 if __name__ == '__main__':

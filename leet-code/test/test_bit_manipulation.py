@@ -13,6 +13,7 @@ from algorithm.bit_manipulation import (
     singleNumber,
     singleNumber2,
     rangeBitwiseAnd,
+    isUnique,
 )
 
 
@@ -44,6 +45,10 @@ class BitManipulationTest(unittest.TestCase):
         self.assertEqual(rangeBitwiseAnd(5, 7), 4)
         self.assertEqual(rangeBitwiseAnd(0, 0), 0)
         self.assertEqual(rangeBitwiseAnd(1, 2147483647), 0)
+
+    def testIsUnique(self):
+        self.assertEqual(isUnique("leetcode"), False)
+        self.assertEqual(isUnique("abc"), True)
 
 
 if __name__ == '__main__':

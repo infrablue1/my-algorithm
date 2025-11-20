@@ -25,6 +25,7 @@ from algorithm.linked_list import (
     reverseKGroup,
     sortList,
     mergeKLists,
+    isPalindrome,
 )
 
 
@@ -177,6 +178,10 @@ class TestLinkedList(unittest.TestCase):
                               [1, 1, 2, 3, 4, 4, 5, 6])
         self._testMergeKLists([], [])
         self._testMergeKLists([[]], [])
+
+    def testIsPalindrome(self):
+        self.assertEqual(isPalindrome(buildLinkedList([1, 2])), False)
+        self.assertEqual(isPalindrome(buildLinkedList([1, 2, 2, 1])), True)
 
 
 if __name__ == '__main__':

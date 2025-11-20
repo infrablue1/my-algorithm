@@ -13,6 +13,7 @@ from algorithm.math import (
     mySqrt,
     myPow,
     divingBoard,
+    missingTwo,
 )
 
 
@@ -46,6 +47,10 @@ class MathTest(unittest.TestCase):
         self.assertEqual(divingBoard(1, 2, 3), [3, 4, 5, 6])
         self.assertEqual(divingBoard(1, 1, 10000), [10000])
         self.assertEqual(divingBoard(1, 2, 0), [])
+
+    def testMissingTwo(self):
+        self.assertEqual(missingTwo([1]), [2, 3])
+        self.assertEqual(missingTwo([2, 3]), [1, 4])
 
 
 if __name__ == '__main__':

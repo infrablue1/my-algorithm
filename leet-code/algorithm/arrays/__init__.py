@@ -23,3 +23,5 @@ from .subsort import *
 from .wiggle_sort import *
 from .longest_sub_array import *
 from .find_closest import *
+from .pair_sums import *
+from .sum_swap import *

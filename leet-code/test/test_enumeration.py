@@ -10,6 +10,8 @@ from algorithm.enumeration import (
     masterMind,
     patternMatching,
     oneEditAway,
+    printKMoves,
+    compressString,
 )
 
 
@@ -27,6 +29,15 @@ class TestBruteForce(unittest.TestCase):
     def testOneEditAway(self):
         self.assertEqual(oneEditAway("pale", "ple"), True)
         self.assertEqual(oneEditAway("pales", "pal"), False)
+
+    def testPrintKMoves(self):
+        self.assertEqual(printKMoves(0), ["R"])
+        self.assertEqual(printKMoves(2), ["_X", "LX"])
+        self.assertEqual(printKMoves(5), ["_U", "X_", "XX"])
+
+    def testCompressString(self):
+        self.assertEqual(compressString("aabcccccaaa"), "a2b1c5a3")
+        self.assertEqual(compressString("abbccd"), "abbccd")
 
 
 if __name__ == '__main__':

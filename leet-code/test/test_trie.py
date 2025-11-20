@@ -9,6 +9,7 @@ sys.path.append(parent_path)
 from algorithm.trie import (
     longestWord,
     multiSearch,
+    getValidT9Words,
 )
 
 
@@ -23,6 +24,12 @@ class TrieTest(unittest.TestCase):
                                      ["is", "ppi", "hi", "sis", "i",
                                       "ssippi"]),
                          [[1, 4], [8], [], [3], [1, 4, 7, 10], [5]])
+
+    def testGetValidT9Words(self):
+        self.assertEqual(getValidT9Words("8733", ["tree", "used"]),
+                         ["tree", "used"])
+        self.assertEqual(getValidT9Words("2", ["a", "b", "c", "d"]),
+                         ["a", "b", "c"])
 
 
 if __name__ == '__main__':

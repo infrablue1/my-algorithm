@@ -37,6 +37,8 @@ from algorithm.arrays import (
     wiggleSort,
     findLongestSubarray,
     findClosest,
+    pairSums,
+    findSwapValues,
 )
 
 
@@ -215,6 +217,15 @@ class TestArrays(unittest.TestCase):
         self.assertEqual(findClosest(["I", "am", "a", "student", "from", "a",
                                       "university", "in", "a", "city"],
                                      "a", "student"), 1)
+
+    def testPairSums(self):
+        self.assertEqual(pairSums([5, 6, 5], 11), [[5, 6]])
+        self.assertEqual(pairSums([5, 6, 5, 6], 11), [[5, 6], [5, 6]])
+
+    def testFindSwapValues(self):
+        self.assertEqual(findSwapValues([4, 1, 2, 1, 1, 2], [3, 6, 3, 3]),
+                         [1, 3])
+        self.assertEqual(findSwapValues([1, 2, 3], [4, 5, 6]), [])
 
 
 if __name__ == '__main__':
