@@ -14,6 +14,10 @@ from algorithm.bit_manipulation import (
     singleNumber2,
     rangeBitwiseAnd,
     isUnique,
+    findClosedNumbers,
+    exchangeBits,
+    insertBits,
+    convertInteger,
 )
 
 
@@ -49,6 +53,23 @@ class BitManipulationTest(unittest.TestCase):
     def testIsUnique(self):
         self.assertEqual(isUnique("leetcode"), False)
         self.assertEqual(isUnique("abc"), True)
+
+    def testFindClosedNumbers(self):
+        self.assertEqual(findClosedNumbers(2), [4, 1])
+        self.assertEqual(findClosedNumbers(1), [2, -1])
+
+    def testExchangeBits(self):
+        self.assertEqual(exchangeBits(2), 1)
+        self.assertEqual(exchangeBits(3), 3)
+
+    def testInsertBits(self):
+        self.assertEqual(insertBits(0b10000000000, 0b10011, 2, 6),
+                         0b10001001100)
+        self.assertEqual(insertBits(0, 0b11111, 0, 4), 0b11111)
+
+    def testConvertInteger(self):
+        self.assertEqual(convertInteger(29, 15), 2)
+        self.assertEqual(convertInteger(1, 2), 2)
 
 
 if __name__ == '__main__':

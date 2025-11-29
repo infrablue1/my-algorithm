@@ -4,3 +4,7 @@ from .hamming_weight import *
 from .single_number import *
 from .range_bitwise_and import *
 from .is_unique_str import *
+from .closer_numbers import *
+from .exchange_bits import *
+from .insert_bits import *
+from .convert_integer import *
