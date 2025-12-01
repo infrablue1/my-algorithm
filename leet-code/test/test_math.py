@@ -14,6 +14,7 @@ from algorithm.math import (
     myPow,
     divingBoard,
     missingTwo,
+    multiply,
 )
 
 
@@ -51,6 +52,10 @@ class MathTest(unittest.TestCase):
     def testMissingTwo(self):
         self.assertEqual(missingTwo([1]), [2, 3])
         self.assertEqual(missingTwo([2, 3]), [1, 4])
+
+    def testMultiply(self):
+        self.assertEqual(multiply(1, 10), 10)
+        self.assertEqual(multiply(3, 4), 12)
 
 
 if __name__ == '__main__':

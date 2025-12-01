@@ -7,3 +7,4 @@ from .word_search import *
 from .n_queens import *
 from .unique_permutation import *
 from .path_with_obstacles import *
+from .subset import *

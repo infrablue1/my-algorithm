@@ -16,6 +16,7 @@ from algorithm.backtrack import (
     solveNQueens,
     uniquePermutation,
     pathWithObstacles,
+    subsets,
 )
 
 
@@ -75,6 +76,10 @@ class TestBacktrack(unittest.TestCase):
     def testPathWithObstacles(self):
         self.assertEqual(pathWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]]),
                          [[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]])
+
+    def testSubsets(self):
+        self.assertEqual(subsets([1, 2, 3]), [[], [1], [1, 2], [1, 2, 3],
+                                              [1, 3], [2], [2, 3], [3]])
 
 
 if __name__ == '__main__':

@@ -5,3 +5,4 @@ from .my_sqrt import *
 from .my_pow import *
 from .diving_board import *
 from .missing_two import *
+from .recursive_multiply import *
