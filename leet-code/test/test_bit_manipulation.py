@@ -18,6 +18,7 @@ from algorithm.bit_manipulation import (
     exchangeBits,
     insertBits,
     convertInteger,
+    flipOneBit,
 )
 
 
@@ -70,6 +71,10 @@ class BitManipulationTest(unittest.TestCase):
     def testConvertInteger(self):
         self.assertEqual(convertInteger(29, 15), 2)
         self.assertEqual(convertInteger(1, 2), 2)
+
+    def testFlipOneBit(self):
+        self.assertEqual(flipOneBit(1775), 8)
+        self.assertEqual(flipOneBit(7), 4)
 
 
 if __name__ == '__main__':

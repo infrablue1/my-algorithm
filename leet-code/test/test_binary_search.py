@@ -12,9 +12,11 @@ from algorithm.binary_search import (
     searchMatrix2,
     findPeakElement,
     searchRotatedArray,
+    searchRotatedArray2,
     searchRange,
     findRotatedMin,
     bestSeqAtIndex,
+    findMagicIndex,
 )
 
 
@@ -52,6 +54,12 @@ class BinarySearchTest(unittest.TestCase):
         self.assertEqual(searchRotatedArray([4, 5, 6, 7, 0, 1, 2], 3), -1)
         self.assertEqual(searchRotatedArray([1], 0), -1)
 
+    def testSearchRotatedSortedArray2(self):
+        self.assertEqual(searchRotatedArray2([15, 16, 19, 20, 25, 1, 3, 4, 5,
+                                              7, 10, 14], 5), 8)
+        self.assertEqual(searchRotatedArray2([15, 16, 19, 20, 25, 1, 3, 4, 5,
+                                              7, 10, 14], 11), -1)
+
     def testSearchRange(self):
         self.assertEqual(searchRange([5, 7, 7, 8, 8, 10], 8), [3, 4])
         self.assertEqual(searchRange([5, 7, 7, 8, 8, 10], 6), [-1, -1])
@@ -65,6 +73,10 @@ class BinarySearchTest(unittest.TestCase):
     def testBestSeqAtIndex(self):
         self.assertEqual(bestSeqAtIndex([65, 70, 56, 75, 60, 68],
                                         [100, 150, 90, 190, 95, 110]), 6)
+
+    def testFindMagicIndex(self):
+        self.assertEqual(findMagicIndex([0, 2, 3, 4, 5]), 0)
+        self.assertEqual(findMagicIndex([1, 1, 1]), 1)
 
 
 if __name__ == '__main__':

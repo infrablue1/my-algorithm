@@ -15,3 +15,4 @@ from .re_space import *
 from .bool_eval import *
 from .kth_magic_number import *
 from .three_steps import *
+from .coin import *

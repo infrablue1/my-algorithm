@@ -15,6 +15,7 @@ from algorithm.math import (
     divingBoard,
     missingTwo,
     multiply,
+    printBin,
 )
 
 
@@ -56,6 +57,10 @@ class MathTest(unittest.TestCase):
     def testMultiply(self):
         self.assertEqual(multiply(1, 10), 10)
         self.assertEqual(multiply(3, 4), 12)
+
+    def testPrintBin(self):
+        self.assertEqual(printBin(0.625), "0.101")
+        self.assertEqual(printBin(0.1), "ERROR")
 
 
 if __name__ == '__main__':

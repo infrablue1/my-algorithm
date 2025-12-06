@@ -33,6 +33,7 @@ from algorithm.binary_tree import (
     kthSmallest,
     isValidBST,
     convertBiNode,
+    checkSubTree,
 )
 
 
@@ -228,6 +229,12 @@ class TestBinaryTree(unittest.TestCase):
         self._testConvertBiNode([4, 2, 5, 1, 3, None, 6, 0],
                                 [0, None, 1, None, 2, None, 3,
                                  None, 4, None, 5, None, 6])
+
+    def testCheckSubTree(self):
+        self.assertEqual(checkSubTree(buildBinaryTree([1, 2, 3]),
+                                      buildBinaryTree([2])), True)
+        self.assertEqual(checkSubTree(buildBinaryTree([1, None, 2, 4]),
+                                      buildBinaryTree([3, 2])), False)
 
 
 if __name__ == '__main__':

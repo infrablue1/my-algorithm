@@ -25,6 +25,7 @@ from algorithm.dynamic_programming import (
     countEval,
     getKthMagicNumber,
     waysToStep,
+    waysToChange,
 )
 
 
@@ -112,6 +113,10 @@ class DPTest(unittest.TestCase):
     def testWaysToStep(self):
         self.assertEqual(waysToStep(3), 4)
         self.assertEqual(waysToStep(5), 13)
+
+    def testWaysToChange(self):
+        self.assertEqual(waysToChange(5), 2)
+        self.assertEqual(waysToChange(10), 4)
 
 
 if __name__ == '__main__':
