@@ -12,6 +12,7 @@ from algorithm.enumeration import (
     oneEditAway,
     printKMoves,
     compressString,
+    tictactoe,
 )
 
 
@@ -38,6 +39,11 @@ class TestBruteForce(unittest.TestCase):
     def testCompressString(self):
         self.assertEqual(compressString("aabcccccaaa"), "a2b1c5a3")
         self.assertEqual(compressString("abbccd"), "abbccd")
+
+    def testTictactoe(self):
+        self.assertEqual(tictactoe(["O X", " XO", "X O"]), "X")
+        self.assertEqual(tictactoe(["OOX", "XXO", "OXO"]), "Draw")
+        self.assertEqual(tictactoe(["OOX", "XXO", "OX "]), "Pending")
 
 
 if __name__ == '__main__':

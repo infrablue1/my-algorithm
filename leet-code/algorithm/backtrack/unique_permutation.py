@@ -1,15 +1,11 @@
 """
-Leetcode link: https://leetcode.cn/problems/permutation-i-lcci/
-无重复字符串的排列组合。编写一种方法，计算某字符串的所有排列组合，字符串每个字符均不相同。
+Leetcode link: https://leetcode.cn/problems/permutation-ii-lcci/
+Write a method to compute all permutations of a string whose characters are not
+necessarily unique. The list of permutations should not have duplicates.
 
 example:
-示例 1：
- 输入：S = "qwe"
- 输出：["qwe", "qew", "wqe", "weq", "ewq", "eqw"]
-
-示例 2：
- 输入：S = "ab"
- 输出：["ab", "ba"
+ Input: S = "qqe"
+ Output: ["eqq","qeq","qqe"]
 """
 
 

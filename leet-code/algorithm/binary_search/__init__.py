@@ -6,3 +6,4 @@ from .search_range import *
 from .find_rotated_min import *
 from .circus_tower import *
 from .magic_index import *
+from .sparse_search import *

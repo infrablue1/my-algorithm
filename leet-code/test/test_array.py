@@ -39,6 +39,8 @@ from algorithm.arrays import (
     findClosest,
     pairSums,
     findSwapValues,
+    smallestDifference,
+    maxAliveYear,
 )
 
 
@@ -226,6 +228,14 @@ class TestArrays(unittest.TestCase):
         self.assertEqual(findSwapValues([4, 1, 2, 1, 1, 2], [3, 6, 3, 3]),
                          [1, 3])
         self.assertEqual(findSwapValues([1, 2, 3], [4, 5, 6]), [])
+
+    def testSmallestDifference(self):
+        self.assertEqual(smallestDifference([1, 3, 15, 11, 2],
+                                            [23, 127, 235, 19, 8]), 3)
+
+    def testMaxAliveYear(self):
+        self.assertEqual(maxAliveYear([1900, 1901, 1950], [1948, 1951, 2000]),
+                         1901)
 
 
 if __name__ == '__main__':

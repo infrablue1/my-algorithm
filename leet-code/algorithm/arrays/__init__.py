@@ -25,3 +25,6 @@ from .longest_sub_array import *
 from .find_closest import *
 from .pair_sums import *
 from .sum_swap import *
+from .smallest_diff import *
+from .living_people import *
+

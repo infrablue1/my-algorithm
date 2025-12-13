@@ -17,6 +17,7 @@ from algorithm.binary_search import (
     findRotatedMin,
     bestSeqAtIndex,
     findMagicIndex,
+    sparseSearch,
 )
 
 
@@ -77,6 +78,12 @@ class BinarySearchTest(unittest.TestCase):
     def testFindMagicIndex(self):
         self.assertEqual(findMagicIndex([0, 2, 3, 4, 5]), 0)
         self.assertEqual(findMagicIndex([1, 1, 1]), 1)
+
+    def testSparseSearch(self):
+        self.assertEqual(sparseSearch(["at", "", "", "", "ball", "", "", "car",
+                                       "", "", "dad", "", ""], "ta"), -1)
+        self.assertEqual(sparseSearch(["at", "", "", "", "ball", "", "", "car",
+                                       "", "", "dad", "", ""], "ball"), 4)
 
 
 if __name__ == '__main__':

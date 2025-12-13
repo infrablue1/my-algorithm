@@ -9,3 +9,4 @@ from .exchange_bits import *
 from .insert_bits import *
 from .convert_integer import *
 from .flip_one_bit import *
+from .swap_numbers import *
